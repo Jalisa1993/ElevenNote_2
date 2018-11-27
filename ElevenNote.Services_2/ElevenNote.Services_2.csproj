@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElevenNote.Data_2\ElevenNote.Data_2.csproj">
+      <Project>{db352a83-99e7-4962-8022-e9991cce419b}</Project>
+      <Name>ElevenNote.Data_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElevenNote.Models_2\ElevenNote.Models_2.csproj">
+      <Project>{5fb3b1fe-b3d8-4b5a-8a3c-5f44bb3b60d9}</Project>
+      <Name>ElevenNote.Models_2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
