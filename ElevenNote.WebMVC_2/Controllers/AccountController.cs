@@ -13,6 +13,11 @@ using ElevenNote.Data_2;
 
 namespace ElevenNote.WebMVC_2.Controllers
 {
+    //Adding SSL to an app
+#if !DEBUG
+    [RequireHttps]
+
+#endif
     [Authorize]
     public class AccountController : Controller
     {
@@ -424,7 +429,7 @@ namespace ElevenNote.WebMVC_2.Controllers
             base.Dispose(disposing);
         }
 
-        #region Helpers
+#region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -481,6 +486,6 @@ namespace ElevenNote.WebMVC_2.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
-        #endregion
+#endregion
     }
 }
